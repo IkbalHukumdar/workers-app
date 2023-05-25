@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-hmtl{
+html{
     @apply text-[125%]
 }
 

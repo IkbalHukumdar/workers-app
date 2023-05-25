@@ -1,8 +1,9 @@
+import Button from "../UI/Button";
 import Card from "../UI/Card";
 
 const AddWorker = () => {
   return (
-    <Card className=" mt-10">
+    <Card className="mt-10">
       <form className="flex flex-col gap-y-2">
         <label htmlFor="name" className="font-medium">
           Çalışan İsmi
@@ -19,12 +20,12 @@ const AddWorker = () => {
         <input
           type="number"
           className="max-w-[40rem] w-full mx-auto border p-2"
-          placeholder="Maaş miktarı giriniz"
+          placeholder="Maaş miktarı yazınız"
           id="wage"
         />
-        <button className="p-2 text-lg bg-teal-700 text-white mt-2">
+        <Button className="mt-2">
           Ekle
-        </button>
+        </Button>
       </form>
     </Card>
   );
