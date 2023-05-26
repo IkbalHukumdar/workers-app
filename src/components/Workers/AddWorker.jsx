@@ -1,5 +1,4 @@
-import { useState, Fragment } from "react";
-import Wrapper from "../Helpers/Wrapper";
+import { useState, Fragment, useRef } from "react";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
 import ErrorModal from "../UI/ErrorModal";
@@ -8,10 +7,12 @@ const AddWorker = (props) => {
   const [enteredWorkerName, setEnteredWorkerName] = useState("");
   const [enteredWage, setEnteredWage] = useState("");
   const [error, setError] = useState();
+  const myForm = useRef();
 
   const minimumWage = 5000;
 
   const addWorkerHandler = (e) => {
+    console.log(myForm.current.className);
     e.preventDefault();
     if (enteredWorkerName.trim().length === 0) {
       setError({
@@ -47,7 +48,7 @@ const AddWorker = (props) => {
     <Fragment>
       {error && <ErrorModal onConfirm={errorHandler} error={error} />}
       <Card className="mt-10">
-        <form className="flex flex-col gap-y-2" onSubmit={addWorkerHandler}>
+        <form className="flex flex-col gap-y-2" onSubmit={addWorkerHandler} ref={myForm}>
           <label htmlFor="name" className="font-medium">
             Çalışan İsmi
           </label>
